@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #252525;
+         background-image: 
+    linear-gradient(#333 1px, transparent 1px),
+    linear-gradient(90deg, #333 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: moveGrid 2s linear infinite;
+  background-position: 0 0;
+}
+
+@keyframes moveGrid {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+        .top-left-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px 15px;
+            background-color: #4a4a4a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .card {
+            background: #3a3a3a;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+            padding: 20px;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .card-title {
+            font-size: 1.5em;
+            margin: 15px 0;
+            color: white;
+        }
+        .card-text {
+            font-size: 1em;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+        .card-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .card-buttons button {
+            padding: 10px 15px;
+            background-color:#4a4a4a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+         button{
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+       button:hover {
+            background-color: #5a5a5a;
+            transform: scale(1.1);          
+        }
+    </style>
+</head>
+<body>
+    <a href="try.html"><button class="top-left-button"><i class="fas fa-arrow-left"></i></button></a>
+    <div class="card">
+        <img src="WhatsApp Image 2025-05-10 at 05.25.31_cf2b8132.jpg" alt="Author Image">
+        <div class="card-title">Code Hype</div>
+        <div class="card-text">Ansh, Aditya and Yash made this website at Lloyd on 9th and 10th May, 2025. This was their project for HackIndia Hackathon.</div>
+        <div class="card-buttons">
+            <a href="#"><button id="b1"><i class="fab fa-instagram fa-3x"></i></button></a>
+            <a href="#"><button id="b2"><i class="fab fa-x-twitter fa-3x"></i></button></a>
+            <a href="#"><button id="b3"><i class="fab fa-linkedin fa-3x"></i></button></a>
+        </div>
+    </div>
+</body>
+</html>

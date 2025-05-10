@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #252525;
+            color: white;
+             background-image: 
+    linear-gradient(#333 1px, transparent 1px),
+    linear-gradient(90deg, #333 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: moveGrid 2s linear infinite;
+  background-position: 0 0;
+}
+
+@keyframes moveGrid {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+        
+        .container {
+            text-align: center;
+            background: #3a3a3a;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .upload-box {
+             
+            margin: 20px 0;
+        }
+        .upload-box input[type="file"],
+        .upload-box input[type="date"] {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #5a5a5a;
+            color: white;
+        }
+        .upload-box input[type="file"]::file-selector-button {
+            background-color: #4a4a4a;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .upload-box input[type="file"]::file-selector-button:hover {
+            background-color: #7a7a7a;
+        }
+        .top-left-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            text-decoration: none;
+            background: #3a3a3a;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: none;
+            font-size: 14px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .top-left-button:hover {
+            background: #5a5a5a;
+        }
+        button[type="submit"] {
+            background-color: #4a4a4a;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #up {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        button[type="submit"]:hover {
+            background-color: #5a5a5a;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <a href="try.html"><button class="top-left-button"><i class="fas fa-arrow-left"></i></button></a>
+    <div class="container">
+        <h2>Upload Your File</h2>
+        <div class="upload-box">
+            <input type="date" name="upload-date" required>
+            <input type="file" name="file-upload" required>
+        </div>
+        <button id="up" type="submit">Upload</button>
+    </div>
+</body>
+</html>

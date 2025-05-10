@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #252525;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+         background-image: 
+    linear-gradient(#333 1px, transparent 1px),
+    linear-gradient(90deg, #333 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: moveGrid 2s linear infinite;
+  background-position: 0 0;
+}
+
+@keyframes moveGrid {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
+        .top-left-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #3a3a3a;
+            border-radius: 5px;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        .cards-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #4a4a4a;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 200px;
+            cursor: pointer;
+            transition: opacity 0.5s ease;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .fade-in {
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .form-box {
+            background-color: #4a4a4a;
+             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+            display: none;
+        }
+
+        .form-box input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .form-box button {
+            background-color: #3a3a3a;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .confirmation-text {
+            display: none;
+            font-size: 24px;
+            text-align: center;
+        }
+    button{
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+        button:hover {
+            background-color: #5a5a5a;
+            transform: scale(1.1);          
+        }
+    </style>
+</head>
+<body>
+    <a href="try.html"><button class="top-left-button"> <i class="fas fa-arrow-left"></i></button></a>
+
+    <div class="cards-container">
+        <div class="card"Wh id="card1">
+            <img src="WhatsApp Image 2025-05-10 at 05.25.25_50b6b567.jpg" alt="Card 1 Image">
+            <h3>Simon</h3>
+            <p>Certified mind mechanic</p>
+        </div>
+        <div class="card" id="card2">
+            <img src="WhatsApp Image 2025-05-10 at 05.25.22_933a07b3.jpg" alt="Card 2 Image">
+            <h3>Navneet</h3>
+            <p>Certified Mind Reader</p>
+        </div>
+    </div>
+
+    <div class="form-box" id="formBox">
+        <h3>Appointment Form</h3>
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="email" id="email" placeholder="Enter your email">
+        <button id="confirmButton">Confirm Appointment</button>
+    </div>
+
+    <div class="confirmation-text" id="confirmationText">Confirmed</div>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+        const formBox = document.getElementById('formBox');
+        const confirmationText = document.getElementById('confirmationText');
+        const confirmButton = document.getElementById('confirmButton');
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                document.querySelector('.cards-container').classList.add('fade-out');
+                setTimeout(() => {
+                    document.querySelector('.cards-container').classList.add('hidden');
+                    formBox.style.display = 'block';
+                    formBox.classList.add('fade-in');
+                }, 500);
+            });
+        });
+
+        confirmButton.addEventListener('click', () => {
+            formBox.classList.remove('fade-in');
+            formBox.classList.add('fade-out');
+            setTimeout(() => {
+                formBox.style.display = 'none';
+                confirmationText.style.display = 'block';
+                confirmationText.classList.add('fade-in');
+            }, 500);
+        });
+    </script>
+</body>
+</html>
